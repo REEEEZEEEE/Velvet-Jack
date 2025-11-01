@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-adsense-account" content="ca-pub-6135313107968407">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6135313107968407"
+     crossorigin="anonymous"></script>
+    <script src="hilow.js"></script>
+    <script src="balance.js"></script>
+    <link rel="stylesheet" href="hilowstyle.css">
+    <link rel="icon" href="../logo.jpg">
+    <title>Velvet Jack</title>
+</head>
+<body>
+
+    <div class="Navbar">
+
+        <h2 id="balanceTab" class="balance">
+            Balance: 
+        </h2>
+        
+        <h2 id="betAmountText"  class="betamount">
+            Bet Amount 
+        </h2>
+
+        <a href="index.html">
+            <img src="../logo.jpg">
+        </a>
+    </div>
+    <div class="playarea">
+        <h2>
+            Card:
+        </h2>
+        <img id="card" src="">
+        
+    </div>
+    <button class="bet" onclick="low()">Low</button>
+    <button class="bet" onclick="high()">High</button>
+    <div class="betamnt" id="betamnt">
+        <form>
+            <label>
+                Input Bet Amount
+            </label>
+            <input class="betInput" id="betAmt" type="number">
+            <button onclick="cba()">Submit</button>
+            
+        </form>
+    </div>
+</body>
+<script>
+    let toggle=false;
+    let currentCard=drawCard()
+    
+    if(typeof(Storage)!=="undefined") {
+        document.getElementById("balanceTab").innerHTML="Balance: $"+sessionStorage.getItem('balance');
+    }
+    function drawCard() {
+        let z = Math.floor(Math.random() * 13);
+        let a=z+1
+        let b = Math.floor(Math.random()*4);
+        let c = ["clubs", "diamonds","hearts","spades"]
+        if (a==1) {
+            document.getElementById("card").src="./cards/ace_of_"+c[b]+".png";
+        } else if (a==11) {
+            document.getElementById("card").src="./cards/jack_of_"+c[b]+".png";
+        } else if (a==12) {
+            document.getElementById("card").src="./cards/queen_of_"+c[b]+".png";
+        } else if (a==13) {
+            document.getElementById("card").src="./cards/king_of_"+c[b]+".png";
+        } else {
+        document.getElementById("card").src="./cards/"+String(a)+"_of_"+c[b]+".png";
+        }
+        document.getElementById("card").alt=String(a)+" of "+c[b]
+        return a;
+    }
+    
+    function high() {
+        if(typeof(Storage)!=="undefined") {
+            sessionStorage.setItem('balance',Number(sessionStorage.getItem('balance'))-Number(sessionStorage.getItem('betAmount')));
+        document.getElementById("balanceTab").innerHTML="Balance: $"+sessionStorage.getItem('balance');
+        }
+        let a=drawCard()
+        if (currentCard<a) {
+            if(typeof(Storage)!=="undefined") {
+                sessionStorage.setItem('balance',Number(sessionStorage.getItem('balance'))+Number(sessionStorage.getItem('betAmount'))*2);
+            document.getElementById("balanceTab").innerHTML="Balance: $"+sessionStorage.getItem('balance');
+            }
+        }
+        currentCard=a;
+    }
+    
+    function low() {
+        if(typeof(Storage)!=="undefined") {
+            sessionStorage.setItem('balance',Number(sessionStorage.getItem('balance'))-Number(sessionStorage.getItem('betAmount')));
+        document.getElementById("balanceTab").innerHTML="Balance: $"+sessionStorage.getItem('balance');
+        }
+        let a=drawCard()
+        if (currentCard>a) {
+            if(typeof(Storage)!=="undefined") {
+                sessionStorage.setItem('balance',Number(sessionStorage.getItem('balance'))+Number(sessionStorage.getItem('betAmount'))*2);
+            document.getElementById("balanceTab").innerHTML="Balance: $"+sessionStorage.getItem('balance');
+            }
+        }
+        currentCard=a;
+    }
+    document.getElementById('betAmountText').addEventListener("click", f)
+    function f() {
+        if (toggle==false) {
+            document.getElementById('betamnt').style.visibility="visible";
+        } else {
+           document.getElementById('betamnt').style.visibility="hidden";
+        }
+        toggle=!toggle;
+        
+    }
+    
+    function cba() {
+        if(typeof(Storage)!=="undefined") {
+            if (document.getElementById('betAmt').value>0) {
+                sessionStorage.setItem('betAmount', document.getElementById('betAmt').value);
+            } else {
+                alert("Please enter a valid bet amount.");
+            }
+        }
+    }
+    
+</script>
+</html>

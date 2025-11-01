@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="balance.js"></script>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="icon" href="../logo.jpg">
+    <title>Velvet Jack</title>
+</head>
+
+<body>
+
+    <div class="Navbar">
+
+        <h2 id="balanceTab" class="balance">
+            Balance: 
+        </h2>
+        
+        <h2  class="betamount" id="betAmountText">
+            Bet Amount 
+        </h2>
+
+        <a href="index.html">
+            <img src="../logo.jpg">
+        </a>
+        
+    </div>
+    <div class="betamnt" id="betamnt">
+        <form>
+            <label>
+                Input Bet Amount
+            </label>
+            <input class="betInput" id="betAmt" type="number">
+            <button onclick="cba()">Submit</button>
+            
+        </form>
+    </div>
+    <div class="gameSelect">
+            <div class="BlackJack">
+                <a href="blackjack.html"><img src="../blckjack.jpg" alt="BlackJack"> </a>
+            </div>
+            <div class="HiLo">
+                <a href="hilow.html"><img src="../hilo.jpg" alt="Hi-Lo"></a>
+            </div>
+            <div class="Slots">
+                <a href="slots.html"><img src="../slots.jpg" alt="Slots"></a>
+            </div>
+    </div>
+    <script>
+        let toggle = false;
+        if (typeof (Storage) !== "undefined") {
+            document.getElementById("balanceTab").innerHTML = "Balance: $" + sessionStorage.getItem('balance');
+        }
+        document.getElementById('betAmountText').addEventListener("click", f)
+        function f() {
+            if (toggle == false) {
+                document.getElementById('betamnt').style.visibility = "visible";
+            } else {
+                document.getElementById('betamnt').style.visibility = "hidden";
+            }
+            toggle = !toggle;
+
+        }
+
+        function cba() {
+            if (typeof (Storage) !== "undefined") {
+                if (document.getElementById('betAmt').value > 0) {
+                    sessionStorage.setItem('betAmount', document.getElementById('betAmt').value);
+                } else {
+                    alert("Please enter a valid bet amount.");
+                }
+            }
+        }
+
+    </script>
+
+</html>

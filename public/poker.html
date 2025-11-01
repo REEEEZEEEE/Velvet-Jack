@@ -1,0 +1,50 @@
+
+<!-- texas-holdem.html (placeholder with deck + logic setup) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Texas Hold'em | Velvet Jack</title>
+  <style>
+    body { background: #0a0; color: #fff; font-family: sans-serif; text-align: center; }
+    .cards { display: flex; justify-content: center; margin-top: 20px; gap: 10px; }
+    .card { width: 60px; height: 90px; background: white; color: black; border-radius: 5px; display: flex; justify-content: center; align-items: center; font-size: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Texas Hold'em Poker</h1>
+  <div>
+    <button onclick="deal()">Deal</button>
+  </div>
+  <div class="cards" id="player"></div>
+  <div class="cards" id="community"></div>
+
+  <script>
+    const suits = ['♠', '♥', '♦', '♣'];
+    const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+
+    function getDeck() {
+      return suits.flatMap(s => ranks.map(r => `${r}${s}`));
+    }
+
+    function shuffle(deck) {
+      for (let i = deck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [deck[i], deck[j]] = [deck[j], deck[i]];
+      }
+    }
+
+    function deal() {
+      const deck = getDeck();
+      shuffle(deck);
+      const player = deck.splice(0, 2);
+      const community = deck.splice(0, 5);
+
+      document.getElementById("player").innerHTML = player.map(c => `<div class='card'>${c}</div>`).join('');
+      document.getElementById("community").innerHTML = community.map(c => `<div class='card'>${c}</div>`).join('');
+    }
+  </script>
+</body>
+</html>
+

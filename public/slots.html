@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-adsense-account" content="ca-pub-6135313107968407">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6135313107968407"
+     crossorigin="anonymous"></script>
+    <script src="balance.js"></script>
+    <script src="slots.js"></script>
+    <link rel="stylesheet" href="slotsstyle.css">
+    <link rel="icon" href="../logo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slots</title>
+</head>
+<body>
+
+    <div class="Navbar">
+
+        <h2 id="balanceTab" class="balance">
+            Balance: 
+        </h2>
+        
+        <h2 id="betAmountText"  class="betamount">
+            Bet Amount 
+        </h2>
+
+        <a href="index.html">
+            <img src="../logo.jpg">
+        </a>
+    </div>
+    
+    <div class="slots">
+        <h3>Slots</h3>
+        <div id="slot1" class="row1">
+
+        </div>
+        <div id="slot2" class="row1">
+
+        </div>
+        <div id="slot3" class="row1">
+
+        </div>
+        <div id="slot4" class="row1">
+
+        </div>
+        <div id="slot5" class="row1">
+
+        </div>
+        <div id="slot6" class="row2">
+
+        </div>
+        <div id="slot7" class="row2">
+
+        </div>
+        <div id="slot8" class="row2">
+
+        </div>
+
+        <div id="slot9" class="row2">
+
+        </div>
+        <div id="slot10" class="row2">
+
+        </div>
+        <div id="slot11" class="row3">
+
+        </div>
+        <div id="slot12" class="row3">
+
+        </div>
+        <div id="slot13" class="row3">
+
+        </div>
+        <div id="slot14" class="row3">
+
+        </div>
+        <div id="slot15" class="row3">
+
+        </div>
+        <div id="slot16" class="row4">
+
+        </div>
+        <div id="slot17" class="row4">
+
+        </div>
+        <div id="slot18" class="row4">
+
+        </div>
+        <div id="slot19" class="row4">
+
+        </div>
+        <div id="slot20" class="row4">
+
+        </div>
+        <div id="slot21" class="row5">
+
+        </div>
+        <div id="slot22" class="row5">
+
+        </div>
+        <div id="slot23" class="row5">
+
+        </div>
+        <div id="slot24" class="row5">
+
+        </div>
+        <div id="slot25" class="row5">
+
+        </div>
+    </div>
+    <h3 id="resultText">You win: $0</h3>
+    <button class="spin" id="spinButton" onclick="spinSlots()">Spin</button>
+    <div class="betamnt" id="betamnt">
+        <form>
+            <label>
+                Input Bet Amount
+            </label>
+            <input class="betInput" id="betAmt" type="number">
+            <button onclick="cba()">Submit</button>
+            
+        </form>
+    </div>
+</body>
+
+<script>
+    let toggle=false;
+    if(typeof(Storage)!=="undefined") {
+        document.getElementById("balanceTab").innerHTML="Balance: $"+sessionStorage.getItem('balance');
+    }
+    
+    document.getElementById('betAmountText').addEventListener("click", f)
+    function f() {
+        if (toggle==false) {
+            document.getElementById('betamnt').style.visibility="visible";
+        } else {
+           document.getElementById('betamnt').style.visibility="hidden";
+        }
+        toggle=!toggle;
+        
+    }
+    
+    function cba() {
+        if(typeof(Storage)!=="undefined") {
+            if (document.getElementById('betAmt').value>0) {
+                sessionStorage.setItem('betAmount', document.getElementById('betAmt').value);
+            } else {
+                alert("Please enter a valid bet amount.");
+            }
+        }
+    }
+    
+</script>
+</html>

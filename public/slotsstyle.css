@@ -1,0 +1,189 @@
+body{
+    background-color: #272727;
+    text-align: center;
+}/* Example of adding valid properties */
+
+
+.Navbar {
+	background-color: #000000;
+	color: rgb(255, 255, 255);
+    height:100px;
+    left:0px;
+    top:0px;
+    position:absolute;
+    width:100%;
+    justify-content: space-between;
+}
+
+.Navbar a img {
+    position: absolute;
+    left:0px;
+    height:100%;
+}
+
+.Navbar .balance {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    right:5%;
+    height:100%;
+    padding-right:10px;
+    transform: translateY(15%);
+}
+
+.Navbar .betamount {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    left:20%;
+    height:100%;
+    padding-right:10px;
+    transform: translateY(15%);
+}
+
+.Navbar .betamount:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.slots {
+    padding-top: 100px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width:700px;
+    height: 700px;
+    margin: 0 auto;
+    background-color: #646464;
+    border-radius: 10px;
+}
+.slots .row1 {
+    position:relative;
+    width:100px;
+    height:100px;
+    background-color: aliceblue;
+    margin:10px 10px ;
+    float: left;
+    left:7%;
+    border-radius: 10px;
+    opacity: 0.85;
+}
+.slots .row2 {
+    position:relative;
+    width:100px;
+    height:100px;
+    background-color: aliceblue;
+    margin:10px 10px ;
+    float: left;
+    left:7%;
+    border-radius: 10px;
+    opacity: 0.85;
+}
+.slots .row3 {
+    position:relative;
+    width:100px;
+    height:100px;
+    background-color: aliceblue;
+    margin:10px 10px ;
+    float: left;
+    left:7%;
+    border-radius: 10px;
+    opacity: 0.85;
+}
+.slots .row4 {
+    position:relative;
+    width:100px;
+    height:100px;
+    background-color: aliceblue;
+    margin:10px 10px ;
+    float: left;
+    left:7%;
+    border-radius: 10px;
+    opacity: 0.85;
+}
+.slots .row5 {
+    position:relative;
+    width:100px;
+    height:100px;
+    background-color: aliceblue;
+    margin:10px 10px ;
+    float: left;
+    left:7%;
+    border-radius: 10px;
+    opacity: 0.85;
+}
+
+.slots .row1 img {
+    width: 100%;
+    height: 100%;
+}
+
+.slots .row2 img {
+    width: 100%;
+    height: 100%;
+}
+
+.slots .row3 img {
+    width: 100%;
+    height: 100%;
+}
+
+.slots .row4 img {
+    width: 100%;
+    height: 100%;
+}
+
+.slots .row5 img {
+    width: 100%;
+    height: 100%;
+}
+
+.spin {
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.spin:hover {
+    cursor: pointer;
+    width: 125px;
+    height: 70px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.betamnt {
+    position:absolute;
+    top:100px;
+    height:200px;
+    width:150px;
+    background-color:#000000;
+    left:20%;
+    transition:250ms;
+    visibility:hidden;
+}
+
+.betamnt form {
+    color:rgb(255,255,255);
+}
+
+.betInput {
+    width:90%;
+    
+}
+
+h3 {
+    position: relative;
+    width:50%;
+    left:25%;
+    color:rgb(255,255,255);
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+

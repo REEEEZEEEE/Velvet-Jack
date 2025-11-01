@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scratch Cards | Velvet Jack</title>
+  <style>
+    body { background: #222; color: #fff; font-family: sans-serif; text-align: center; }
+    #scratchArea {
+      margin: 2rem auto;
+      background: #999;
+      width: 300px;
+      height: 150px;
+      position: relative;
+    }
+    #prizeText {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      z-index: 1;
+    }
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <h1>Scratch Card</h1>
+  <div id="scratchArea">
+    <div id="prizeText"></div>
+    <canvas width="300" height="150"></canvas>
+  </div>
+  <script>
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+    const prizeText = document.getElementById("prizeText");
+    const prizes = ["$100", "$10", "$0", "$5", "$50"];
+    const prize = prizes[Math.floor(Math.random() * prizes.length)];
+    prizeText.innerText = prize;
+
+    ctx.fillStyle = "#bbb";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    canvas.addEventListener("mousemove", e => {
+      if (e.buttons !== 1) return;
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.beginPath();
+      ctx.arc(x, y, 15, 0, 2 * Math.PI);
+      ctx.fill();
+    });
+  </script>
+</body>
+</html>

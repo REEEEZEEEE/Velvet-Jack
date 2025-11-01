@@ -1,0 +1,164 @@
+body{
+    background-color: #272727;
+    text-align: center;
+}/* Example of adding valid properties */
+
+
+.Navbar {
+	background-color: #000000;
+	color: rgb(255, 255, 255);
+    height:100px;
+    left:0px;
+    top:0px;
+    position:absolute;
+    width:100%
+}
+
+.Navbar a img {
+    position: absolute;
+    left:0px;
+    height:100%;
+}
+
+.Navbar .balance {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    right:5%;
+    height:100%;
+    padding-right:10px;
+    transform: translateY(15%);
+}
+
+.Navbar .betamount {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    left:20%;
+    height:100%;
+    padding-right:10px;
+    transform: translateY(15%);
+}
+
+.Navbar .betamount:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.dealer {
+    position: relative;
+    padding-top: 100px;
+    width:50%;
+    left:25%;
+    color: rgb(255, 255, 255);
+}
+.player {
+    position: relative;
+    width:50%;
+    left:25%;
+    color: rgb(255, 255, 255);
+}
+
+#dealer-cards img {
+    height:175px;
+    width:125px;
+    margin:1px;
+}
+
+#your-cards img {
+    height:175px;
+    width:125px;
+    margin:1px;
+}
+
+#hit-button {
+    width: 100px;
+    height:50px;
+    font-size:20px;
+    transition: all 0.3s ease;
+}
+
+#stand-button {
+    width: 100px;
+    height:50px;
+    font-size:20px;
+    transition: all 0.3s ease;
+}
+
+#deal-button {
+    width: 100px;
+    height:50px;
+    font-size:20px;
+    transition: all 0.3s ease;
+}
+
+#claim-button {
+    width: 175px;
+    height:50px;
+    font-size:20px;
+    transition: all 0.3s ease;
+}
+
+#claim-button:hover {
+    cursor: pointer;
+    width: 200px;
+    height:75px;
+    border-radius: 10px;
+}
+
+#deal-button:hover {
+    cursor: pointer;
+    width: 125px;
+    height:75px;
+    border-radius: 10px;
+}
+
+#stand-button:hover {
+    cursor: pointer;
+    width: 125px;
+    height:75px;
+    border-radius: 10px;
+}
+
+#hit-button:hover {
+    cursor: pointer;
+    width: 125px;
+    height:75px;
+    border-radius: 10px;
+}
+
+.betamnt {
+    position:absolute;
+    top:100px;
+    height:200px;
+    width:150px;
+    background-color:#000000;
+    left:20%;
+    transition:250ms;
+    visibility:hidden;
+}
+
+.betamnt form {
+    color:rgb(255,255,255);
+}
+
+.betInput {
+    width:90%;
+    
+}
+
+h4 {
+    position: relative;
+    left:25%;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    margin: 0;
+    width:50%
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}

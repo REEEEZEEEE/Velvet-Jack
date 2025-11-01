@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-adsense-account" content="ca-pub-6135313107968407">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6135313107968407"
+     crossorigin="anonymous"></script>
+    <script src="balance.js"></script>
+    <script src="blackjack.js"></script>
+    <link rel="stylesheet" href="blckjckstyle.css">
+    <link rel="icon" href="../logo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+</head>
+<body>
+    <div class="Navbar">
+
+        <h2 id="balanceTab" class="balance">
+            Balance: 
+        </h2>
+        
+        <h2 id="betAmountText"  class="betamount">
+            Bet Amount 
+        </h2>
+
+        <a href="index.html">
+            <img src="../logo.jpg">
+        </a>
+    </div>
+    <div class="dealer">
+        <h3>Dealer: <span id="dealer-sum"></span></h3>
+        <div id="dealer-cards">
+            
+        </div>
+    </div>
+    
+    <div class="player">
+        <h3>You: <span id="your-sum"></span></h3>
+        <div id="your-cards">
+            
+        </div>
+    </div>
+    <br>
+    <h4 id="winner">
+    </h4>
+    <br>
+    <button id="deal-button" onclick="z()">Deal</button>
+    <button id="hit-button">Hit</button>
+    <button id="stand-button">Stand</button>
+    <div class="betamnt" id="betamnt">
+        <form>
+            <label>
+                Input Bet Amount:
+            </label>
+            <input class="betInput" id="betAmt" type="number">
+            <button onclick="cba()">Submit</button>
+            
+        </form>
+    </div>
+
+</body>
+
+<script>
+    let toggle=false;
+    if(typeof(Storage)!=="undefined") {
+        document.getElementById("balanceTab").innerHTML="Balance: $"+sessionStorage.balance;
+    }
+    function z() {
+        if(typeof(Storage)!=="undefined") {
+            document.getElementById("balanceTab").innerHTML="Balance: $"+sessionStorage.balance;
+        }
+        onStart();
+    }
+    
+    document.getElementById('betAmountText').addEventListener("click", f)
+/**
+ * Toggles the visibility of the bet amount input form.
+ * When called, it checks the current toggle state and
+ * either shows or hides the form accordingly.
+ */
+
+    function f() {
+        if (toggle==false) {
+            document.getElementById('betamnt').style.visibility="visible";
+        } else {
+           document.getElementById('betamnt').style.visibility="hidden";
+        }
+        toggle=!toggle;
+        
+    }
+    
+    function cba() {
+        if(typeof(Storage)!=="undefined") {
+            if (document.getElementById('betAmt').value>0) {
+                sessionStorage.setItem('betAmount', document.getElementById('betAmt').value);
+            } else {
+                alert("Please enter a valid bet amount.");
+            }
+        }
+    }
+    
+
+</script>
+</html>

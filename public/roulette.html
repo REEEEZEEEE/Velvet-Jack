@@ -1,0 +1,52 @@
+<!-- roulette.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roulette | Velvet Jack</title>
+  <style>
+    body { background: #111; color: #fff; text-align: center; font-family: sans-serif; }
+    canvas { margin-top: 2rem; background: #333; border-radius: 50%; }
+  </style>
+</head>
+<body>
+  <h1>Roulette</h1>
+  <canvas id="roulette" width="400" height="400"></canvas>
+  <br/>
+  <button onclick="spinWheel()">Spin</button>
+
+  <script>
+    const canvas = document.getElementById("roulette");
+    const ctx = canvas.getContext("2d");
+    const segments = 37;
+    const degPerSegment = 360 / segments;
+    let angle = 0;
+
+    function drawWheel() {
+      for (let i = 0; i < segments; i++) {
+        ctx.beginPath();
+        ctx.moveTo(200, 200);
+        ctx.arc(200, 200, 200, i * degPerSegment * Math.PI / 180, (i + 1) * degPerSegment * Math.PI / 180);
+        ctx.fillStyle = i % 2 === 0 ? "red" : "black";
+        if (i === 0) ctx.fillStyle = "green";
+        ctx.fill();
+      }
+    }
+
+    function spinWheel() {
+      const spinAngle = Math.random() * 360 + 720;
+      angle = (angle + spinAngle) % 360;
+      ctx.clearRect(0, 0, 400, 400);
+      ctx.save();
+      ctx.translate(200, 200);
+      ctx.rotate(angle * Math.PI / 180);
+      ctx.translate(-200, -200);
+      drawWheel();
+      ctx.restore();
+    }
+
+    drawWheel();
+  </script>
+</body>
+</html>
