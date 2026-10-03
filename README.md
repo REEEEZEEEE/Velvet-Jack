@@ -3,20 +3,19 @@
 ## Overview
 Velvet Jack is a web application deployed via Firebase. 
 
-[Provide a brief, clear, 1-2 paragraph description of what your project does, the problem it solves, and its primary target audience. Explain the core value proposition of Velvet Jack here.]
 
 **Live Application:** [Velvet Jack on Firebase](https://velvet-jack.firebaseapp.com)
 
 ## Features
-*   **Feature 1:** [Describe the most important feature of the application]
-*   **Feature 2:** [Describe another key functionality]
-*   **Feature 3:** [List any user authentication, database interactions, or unique UI components]
+*   **Feature 1:** [Blackjack]
+*   **Feature 2:** [Hi-Lo]
+*   **Feature 3:** [Slots]
 *   **Responsive Design:** Optimized for both desktop and mobile viewing.
 
 ## Technologies Used
-*   **Frontend:** [e.g., React.js, Vue.js, HTML5/CSS3/JavaScript]
-*   **Backend/BaaS:** Firebase (Hosting, [add others if applicable: Firestore, Authentication, Cloud Functions])
-*   **Styling:** [e.g., Tailwind CSS, Bootstrap, Styled Components]
+*   **Frontend:** [HTML5/CSS3/JavaScript]
+*   **Backend/BaaS:** Firebase (Hosting)
+*   **Styling:** [Tailwind CSS]
 *   **Version Control:** Git & GitHub
 
 ## Getting Started
@@ -95,7 +94,7 @@ Contributions are what make the open-source community such an amazing place to l
 
 ## License
 
-Distributed under the [MIT / GPL / Apache] License. See `LICENSE` for more information.
+Distributed under the [MIT] License. See `LICENSE` for more information.
 
 ## Contact
 
